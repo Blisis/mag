@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2ffff337-0b46-4450-ab1e-86ec0fbf6fcf" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/AdminLTE-3.1.0/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="mag: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="mag" />
+  </component>
+  <component name="ProjectId" id="1zHHCcg1XAgIjX6LvgRLyxqvLEY" />
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="E:/data base" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\mag\admin" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2ffff337-0b46-4450-ab1e-86ec0fbf6fcf" name="Default Changelist" comment="" />
+      <created>1633797967003</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1633797967003</updated>
+      <workItem from="1633797968238" duration="22548000" />
+      <workItem from="1633950060922" duration="498000" />
+      <workItem from="1633988575499" duration="3986000" />
+      <workItem from="1634485481251" duration="12894000" />
+      <workItem from="1634505161428" duration="3911000" />
+      <workItem from="1634634877966" duration="3296000" />
+      <workItem from="1634638247049" duration="124000" />
+      <workItem from="1634730467635" duration="723000" />
+      <workItem from="1634731221103" duration="502000" />
+      <workItem from="1634934833360" duration="138000" />
+      <workItem from="1634936913716" duration="7218000" />
+      <workItem from="1635002542698" duration="17137000" />
+      <workItem from="1635114341312" duration="53000" />
+      <workItem from="1635114483369" duration="5815000" />
+      <workItem from="1635408549820" duration="9789000" />
+      <workItem from="1635442344053" duration="6363000" />
+      <workItem from="1635533993360" duration="8819000" />
+      <workItem from="1635617232296" duration="4532000" />
+      <workItem from="1635621836629" duration="8221000" />
+      <workItem from="1636113721667" duration="2845000" />
+      <workItem from="1636151746126" duration="3859000" />
+      <workItem from="1636208300730" duration="22223000" />
+      <workItem from="1636319569051" duration="1438000" />
+      <workItem from="1636581922946" duration="663000" />
+      <workItem from="1636582740980" duration="354000" />
+      <workItem from="1637533056117" duration="1749000" />
+      <workItem from="1637534870059" duration="1779000" />
+      <workItem from="1637536956756" duration="1179000" />
+      <workItem from="1637538958557" duration="939000" />
+      <workItem from="1637873448457" duration="980000" />
+      <workItem from="1637964291564" duration="923000" />
+      <workItem from="1638123886299" duration="1948000" />
+      <workItem from="1638142717352" duration="1774000" />
+      <workItem from="1638144524731" duration="1782000" />
+      <workItem from="1638146354148" duration="1678000" />
+      <workItem from="1638148164210" duration="1209000" />
+      <workItem from="1638150402635" duration="956000" />
+      <workItem from="1638153755507" duration="188000" />
+      <workItem from="1638353916223" duration="953000" />
+      <workItem from="1638383035662" duration="1007000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

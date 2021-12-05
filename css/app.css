@@ -1,0 +1,19 @@
+body{
+    background-color: lightslategray;
+}
+.backgroundAlb{
+    background-color: aliceblue;
+}
+.logo{
+    margin:15px;
+
+}.cautare{
+    margin:30px 0 0 0;
+ }
+ .autentificareHeader{
+      margin:30px 0 0 0;
+  }
+.authbox{
+    margin:30px 0 0 0;
+    text-align: center;
+}
