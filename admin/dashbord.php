@@ -67,39 +67,45 @@ $comenzi_noi=reset($comenzi_noi);
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="row">
-                            <div class="col-md-6">
-                                useri :
+                            <div class="col-md-4">
+                                Useri :
                             </div>
-                            <div class="col-md-6">
-                                <?php echo $useri['n'] ;?>-total useri <br>
-                                <?php echo $useri_noi['n'] ;?>-useri noi <br>
-                                <?php echo $useri_activi['n'] ;?>-useri activi <br>
+                            <div class="col-md-8">
+                                <?php echo $useri['n'] ;?>-Total useri <br>
+                                <?php echo $useri_noi['n'] ;?>-Useri noi <br>
+                                <?php echo $useri_activi['n'] ;?>-Useri activi <br>
                             </div>
                         </div>
 
                     </div>
-                    <div class="col-md-3">
-                        <div class="col-md-6">
-                            comenzi:
+                    <div class="col-md-4">
+                        <div class="row">
+                        <div class="col-md-4">
+                            Comenzi:
                         </div>
-                        <div class="col-md-6">
-                            <?php echo $comenzi['n'] ;?>-total comenzi <br>
-                            <?php echo $comenzi_noi['n'] ;?>- comenzi noi <br>
-                            <?php echo $useri_activi['n'] ;?>-comenzi  <br>
-                            <?php echo $useri_activi['n'] ;?>-comenzi  <br>
-                            <?php echo $useri_activi['n'] ;?>-comenzi  <br>
+                        <div class="col-md-8">
+                            <?php echo $comenzi['n'] ;?>-Total comenzi <br>
+                            <?php echo $comenzi_noi['n'] ;?>- Comenzi noi <br>
+                            <?php echo $useri_activi['n'] ;?>-Comenzi  <br>
+                            <?php echo $useri_activi['n'] ;?>-Comenzi  <br>
+                            <?php echo $useri_activi['n'] ;?>-Comenzi  <br>
                         </div>
                     </div>
-                -total comenzi
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-4">
+                            Mesaje:
+                            </div>
+                            <div class="col-md-8">
+                            -Total mesaje <br>
+                            -Mesaje noi <br>
+                            </div>
 
-                        comenzi ....
-                        comenzi ....
-                        comenzi ....
-                    </div>
-                    <div class="col-md-3">
-                mesaje
+
+                        </div>
                     </div>
                 </div>
             </div>
