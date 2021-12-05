@@ -3,6 +3,17 @@ require_once "global/db.php";
 require_once "global/functii.php";
 $database=Database::getInstatnta();
 $produse=$database->query("select p.* , c.nume as nume_cat from produse AS p left join categorii AS c on p.id_categorie=c.id;")->fetch_all(MYSQLI_ASSOC);
+$cautari=$database->query("select * from produse as p
+order by p.stoc desc
+limit 4")->fetch_all(MYSQLI_ASSOC);
+$vanzari=$database->query("select p.id, p.nume , p.poza from produse as p join produse_comenzi as pc on pc.id_produse=p.id
+order by pc.cantitate desc
+limit 4")->fetch_all(MYSQLI_ASSOC);
+$noutati=$database->query(" SELECT t.* FROM mag.produse t
+     ORDER BY data DESC
+     LIMIT 4")->fetch_all(MYSQLI_ASSOC);
+
+
 ?>
 <html>
 <head>

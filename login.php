@@ -16,6 +16,9 @@ $database = Database::getInstatnta();
         $user = $database->query("SELECT * FROM useri u WHERE u.email = '{$email}'")->fetch_assoc();
         if(md5($parola)===$user["parola"]){
             $_SESSION['user'] =$user;
+
+
+            $user = $database->query("UPDATE useri u set u.last_login=now() WHERE u.email = '{$email}' ;");
             header('Location:index.php');
         }
     }

@@ -8,15 +8,49 @@ $id_user=$_SESSION['user']['id'];
 $user=$database->query("select u.id , u.nume , u.telefon , u.adresa , u.email 
 from useri as u where u.id=$id_user;
 ")->fetch_all(MYSQLI_ASSOC);
-if (ispost()){
-    //validam datele
-    //formatul de email
-    //formatul de nume
-    //formatul de telefon
-    // adresa contine ceva
+//echo "<pre>";
+//var_dump($user);
+//die;
 
-    // dupa validare( count de erori = 0) facem update in db
-}
+$user=reset($user);
+$erori=[];
+if (ispost()) {
+//validam datele
+    //formatul de email
+    if (!isvalidemail($_POST['email'], $database,false)) {
+        $erori['invalid_mail'] = "E-mail Invalid";
+    }
+        //formatul de nume
+        if (strlen($_POST['nume']) <= 4 ){
+            $erori['invald_nume'] = "Numele nu este completat ";
+        };
+        //formatul de telefon
+        if (strlen($_POST['telefon']) <=9 ) {
+            $erori['invalid-telefon'] = "Numarul de telefon nu este corect!";
+        };
+        // adresa contine ceva
+      if (strlen($_POST['adresa']) <= 10 ) {
+          $erori['invalid-adres'] = "Adresa nu este completata";
+        };
+        // dupa validare( count de erori = 0) facem update in db
+    if (count($erori) == 0 ) {
+        $nume=$_POST['nume'];
+        $email=$_POST['email'];
+        $telefon = $_POST['telefon'];
+        $adresa = $_POST['adresa'];
+        $database->query("update useri 
+                    set nume ='{$nume}' , 
+                        email='{$email}' ,
+                        telefon='{$telefon}',
+                        adresa='{$adresa}'
+                     where id='{$id_user}'");
+        header('Location:editeaza_user.php');
+    }
+    else{
+        var_dump($erori);
+    };
+
+ }
 
 ?>
 
@@ -47,45 +81,44 @@ if (ispost()){
                 </tr>
             </thead>
             <tr class="table-dark ">
-                <form action="">
+                <form method="post" action="">
             <td>
 
                     <div class="form-group" >
-                        <input type="text" name="nume" class="form-control" placeholder="Nume" value="<?php echo $_SESSION['user']['nume'];  ?>">
+                        <input type="text" name="nume" class="form-control" placeholder="Nume" value="<?php echo $user['nume']; ?>">
                     </div>
 
             </td>
             <td>
 
                     <div class="form-group" >
-                        <input type="email" name="email" class="form-control" placeholder="E-mail" value="<?php echo $_SESSION['user']['email'];  ?>">
+                        <input type="email" name="email" class="form-control" placeholder="E-mail" value="<?php echo $user['email'];  ?>">
                     </div>
 
             </td>
             <td>
 
                     <div class="form-group" >
-                        <input type="text" name="telefon" class="form-control" placeholder="Telefon" value="<?php echo $_SESSION['user']['telefon'];  ?>">
+                        <input type="text" name="telefon" class="form-control" placeholder="Telefon" value="<?php echo $user['telefon'];  ?>">
                     </div>
 
             </td>
             <td>
 
                     <div class="form-group" >
-                        <input type="text" name="adresa" class="form-control" placeholder="Adresa"value="<?php echo $_SESSION['user']['adresa'];  ?>">
+                        <input type="text" name="adresa" class="form-control" placeholder="Adresa" value="<?php echo $user['adresa'];  ?>">
                     </div>
 
             </td>
             <td>
-                <button class="btn btn-warning btn-sm"> Actualizeaza informatiile</button>
+                <button class="btn btn-warning btn-sm"> Salveaza informatiile</button>
             </td>
                 </form>
             </tr>
+
         </table>
     </div>
 </div>
-
-
 
 </body>
 </html>

@@ -24,7 +24,36 @@ from useri as u where u.id=$id_user;
 <body>
 <div class="container">
 <?php include "theme/header.php"; ?>
+   <?php  //informatii despre user
+    //trebuie sa facem un tabel din db cu informatiile despre acel user din $_Session
+    //sa adaugam un buton de editeaza user si cam atat
+?>
+   <div class="row" style="background: white">
+       <table class="table table-striped  table-sm" border="2">
+           <thead class="table-dark">
+       <tr>
+           <td>Nume</td>
+           <td>E-mail</td>
+           <td>Telefon</td>
+           <td>Adresa</td>
+           <td>Numar  comenzi</td>
+           <td>Vechime</td>
+       </tr>
+           <tr>
 
+               <td><?php
+                   $user=reset($user);
+                   echo $user['nume']?></td>
+               <td><?php echo $user['email']?></td>
+               <td><?php echo $user['telefon']?></td>
+               <td><?php echo $user['adresa']?></td>
+               <td><?php echo $user['numar_comenzi']?></td>
+               <td><?php echo $user['vechime']?></td>
+
+           </tr>
+           </thead>
+       </table> <a href="<?php echo url; ?>editeaza_user.php" class="btn btn-warning btn-ml">Editeaza informatiile </a>
+   </div>
 
 </div>
 </body>

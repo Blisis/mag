@@ -6,7 +6,7 @@ $id=$_GET['id'];
 $produs=$database->query("
 select * from produse where id={$id}; 
 ")->fetch_all(MYSQLI_ASSOC);
-
+$produs=reset($produs);
 ?>
 <html>
 <head>
@@ -26,13 +26,27 @@ select * from produse where id={$id};
 
 <div class="container">
     <div class="row">
-<img src="<?php url?>imagini/produse/<?php echo$produs[0]['poza'] ?>" class="img-responsive" alt="..."   style="">
+        <div class="col-md-12">
+            <h1><?php echo $produs['nume']; ?></h1>
+        </div>
+        <div class="col-md-3">
+
+<img src="<?php url?>imagini/produse/<?php echo$produs['poza'] ?>" class="img-responsive"  style="">
+        </div>
+
+        <div class="col-md-6">
+            decriere
+            si restu
+
+
+
+
+
 
         <br>
         <a href="index.php" class="btn btn-info" role="button">Inapoi</a>
         <p><a href="#"  class="btn btn-primary adaugareCos" data-id="<?php echo $produs[0]['id'];?>" role="button" >Adauga in cos</a>
-
-
+        </div>
 
 
 

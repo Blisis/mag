@@ -27,7 +27,7 @@
                 ?>
                 <br>
                 <a href="<?php echo url; ?>logout.php" class="btn btn-danger btn-xs">Paraseste</a>
-                <a href="<?php echo url; ?>editeaza_user.php" class="btn btn-danger btn-xs">Contul meu</a>
+                <a href="<?php echo url; ?>user.php" class="btn btn-danger btn-xs">Contul meu</a>
                 <a href="<?php echo url; ?>cos.php" class="btn btn-danger btn-xs">Cosul meu</a>
                 <?php
                 if ($_SESSION['user']['is_admin']==1){

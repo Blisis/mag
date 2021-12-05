@@ -9,7 +9,7 @@ define ('SITE_ROOT', realpath(dirname(__FILE__)));
         }
         return false;
     }
-    function isvalidemail($email, $database){
+    function isvalidemail($email, $database,$checkDB=true){
         if(isset($email) && !empty($email)){
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
                 return false;
@@ -17,12 +17,12 @@ define ('SITE_ROOT', realpath(dirname(__FILE__)));
         }else{
             return false;
         }
-
+        if($checkDB){
         $user = $database->query("SELECT * FROM useri u WHERE u.email = '{$email}'");
 
         if ($user->num_rows > 0) {
             return false;
-        }
+        }}
 
         return true;
     }
