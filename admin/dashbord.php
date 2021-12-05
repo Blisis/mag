@@ -42,7 +42,7 @@ $comenzi_finalizate=reset($comenzi_finalizate);
 
 ?>
 
-<!-- Aici HTML, afisarea efectiva a elementelor in pagina -->
+<!-- Aici HTML, afisarea efectiva a elementhfghdfghdfghdfghdfgelor in pagina -->
 
 <html>
 <head>

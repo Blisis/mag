@@ -61,6 +61,7 @@ left join useri AS u on c.id_user=u.id
                         <td>Data comenzii</td>
                         <td>Editeaza</td>
                         </thead>
+                        <tr>
                         <?php
                         foreach ($comenzi as $comanda)
                         {?>
@@ -99,7 +100,7 @@ left join useri AS u on c.id_user=u.id
                                     <a href="<?php echo url;?>admin/comenzi/edit.php?id=<?php echo $comanda['id']; ?>" class="btn btn-warning btn-sm" >Editeaza</a>
                                 </div>
                                 </td>
-
+                        </tr>
                             </div>
                         </div>
 
