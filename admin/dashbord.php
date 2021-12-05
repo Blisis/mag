@@ -13,6 +13,7 @@ $useri_noi=reset($useri_noi);
 
 $useri_activi=$database->query("select count(u.id) as n from useri as u where last_login>=date(now())-interval  30 day")->fetch_all(MYSQLI_ASSOC);
 $useri_activi=reset($useri_activi);
+
 //var_dump($useri_noi);
 //die();
 
@@ -73,8 +74,19 @@ $useri_activi=reset($useri_activi);
 
                     </div>
                     <div class="col-md-3">
-                comenzi: -total comenzi
-                        - comenzi noi
+                        <div class="col-md-6">
+                            comenzi:
+                        </div>
+                        <div class="col-md-6">
+                            <?php echo $useri['n'] ;?>-total comenzi <br>
+                            <?php echo $useri_noi['n'] ;?>- comenzi noi <br>
+                            <?php echo $useri_activi['n'] ;?>-comenzi  <br>
+                            <?php echo $useri_activi['n'] ;?>-comenzi  <br>
+                            <?php echo $useri_activi['n'] ;?>-comenzi  <br>
+                        </div>
+                    </div>
+                -total comenzi
+
                         comenzi ....
                         comenzi ....
                         comenzi ....
