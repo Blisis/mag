@@ -14,6 +14,13 @@ $useri_noi=reset($useri_noi);
 $useri_activi=$database->query("select count(u.id) as n from useri as u where last_login>=date(now())-interval  30 day")->fetch_all(MYSQLI_ASSOC);
 $useri_activi=reset($useri_activi);
 
+$comenzi=$database->query("select count(c.id) as n from comenzi as c")->fetch_all(MYSQLI_ASSOC);
+$comenzi=reset($comenzi);
+
+$comenzi_noi=$database->query("select count(c.id) as n from comenzi as c where status='trimis'")->fetch_all(MYSQLI_ASSOC);
+$comenzi_noi=reset($comenzi_noi);
+
+
 //var_dump($useri_noi);
 //die();
 
@@ -78,8 +85,8 @@ $useri_activi=reset($useri_activi);
                             comenzi:
                         </div>
                         <div class="col-md-6">
-                            <?php echo $useri['n'] ;?>-total comenzi <br>
-                            <?php echo $useri_noi['n'] ;?>- comenzi noi <br>
+                            <?php echo $comenzi['n'] ;?>-total comenzi <br>
+                            <?php echo $comenzi_noi['n'] ;?>- comenzi noi <br>
                             <?php echo $useri_activi['n'] ;?>-comenzi  <br>
                             <?php echo $useri_activi['n'] ;?>-comenzi  <br>
                             <?php echo $useri_activi['n'] ;?>-comenzi  <br>
