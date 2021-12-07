@@ -68,7 +68,7 @@ $mesaje_noi=reset($mesaje_noi);
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Acasa</a></li>
+                            <li class="breadcrumb-item"><a href="dashbord.php">Acasa</a></li>
                             <li class="breadcrumb-item active">Tablou control </li>
                         </ol>
                     </div><!-- /.col -->
@@ -97,14 +97,14 @@ $mesaje_noi=reset($mesaje_noi);
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-md-3">
-                                Comenzi:
+                                <a href="comenzi/listeaza.php">Comenzi:</a>
                             </div>
                             <div class="col-md-9">
-                                <?php echo $comenzi['n'] ;?> -Total comenzi <br>
-                                <?php echo $comenzi_primite['n'] ;?>- Comenzi noi <br>
-                                <?php echo $comenzi_proces['n'] ;?>-Comenzi in procesare  <br>
-                                <?php echo $comenzi_trimise['n'] ;?>-Comenzi trimise spre client <br>
-                                <?php echo $comenzi_finalizate['n'] ;?>-Comenzi finalizate  <br>
+                                <a href="comenzi/listeaza.php"><?php echo $comenzi['n'] ;?> -Total comenzi </a><br>
+                                <a href="comenzi/listeaza_nou.php"><?php echo $comenzi_primite['n'] ;?>- Comenzi noi </a><br>
+                                <a href="comenzi/listeaza_inProcesare.php"><?php echo $comenzi_proces['n'] ;?>-Comenzi in procesare  </a><br>
+                                <a href="comenzi/listeaza_trimisa.php"><?php echo $comenzi_trimise['n'] ;?>-Comenzi trimise spre client </a><br>
+                                <a href="comenzi/listeaza_finalizata.php"><?php echo $comenzi_finalizate['n'] ;?>-Comenzi finalizate  </a><br>
                             </div>
                         </div>
                     </div>

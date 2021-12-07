@@ -6,13 +6,13 @@ $database = Database::getInstatnta();
 $comenzi=$database->query("select
        u.nume AS numeClient,u.email,u.adresa ,c.*
 from comenzi AS c
-left join useri AS u on c.id_user=u.id where c.status=primita;
-;") ;
-
-var_dump($comenzi);
-die();
+left join useri AS u on c.id_user=u.id -- where c.status=primita;
+;") ->fetch_all(MYSQLI_ASSOC);
 //$comenzi=reset($comenzi);
-//->fetch_all(MYSQLI_ASSOC);
+//var_dump($comenzi);
+//die();
+
+//
 
 ?>
 
@@ -66,7 +66,9 @@ die();
                         <td>Editeaza</td>
                         </thead>
                         <?php
-                        foreach ($comenzi as $comanda) {?>
+                        foreach ($comenzi as $comanda) {
+                            if($comanda["status"]=="primita"){
+                            ?>
                             <tr>
                                 <div class="col-md-3">
                                     <div class="card">
@@ -107,7 +109,7 @@ die();
                                     </div>
                                 </div>
                             </tr>
-                        <?php   }
+                        <?php  } }
                         ?>
 
                 </div>
