@@ -32,6 +32,13 @@ $comenzi_trimise=reset($comenzi_trimise);
 $comenzi_finalizate=$database->query("select count(c.id) as n from comenzi as c where status='finalizata'")->fetch_all(MYSQLI_ASSOC);
 $comenzi_finalizate=reset($comenzi_finalizate);
 
+$mesaje=$database->query("select count(m.id) as n from mesaje as m")->fetch_all(MYSQLI_ASSOC);
+$mesaje=reset($mesaje);
+
+$mesaje_noi=$database->query("select count(m.id) as n from mesaje as m where status='0'")->fetch_all(MYSQLI_ASSOC);
+$mesaje_noi=reset($mesaje_noi);
+
+
 
 
 ?>
@@ -107,8 +114,8 @@ $comenzi_finalizate=reset($comenzi_finalizate);
                                 Mesaje:
                             </div>
                             <div class="col-md-9">
-                                -Total mesaje <br>
-                                -Mesaje noi <br>
+                                <?php echo $mesaje['n'] ;?>-Total mesaje <br>
+                                <?php echo $mesaje_noi['n'] ;?>-Mesaje noi <br>
                             </div>
 
 

@@ -1,6 +1,19 @@
 <?php
-include "../../global/functii.php"
 // functionalitate php, ce face pagina asta efectiv
+include "../../global/functii.php";
+require_once "../../global/db.php";
+$database = Database::getInstatnta();
+$comenzi=$database->query("select
+       u.nume AS numeClient,u.email,u.adresa ,c.*
+from comenzi AS c
+left join useri AS u on c.id_user=u.id where c.status=primita;
+;") ;
+
+var_dump($comenzi);
+die();
+//$comenzi=reset($comenzi);
+//->fetch_all(MYSQLI_ASSOC);
+
 ?>
 
 <!-- Aici HTML, afisarea efectiva a elementelor in pagina -->
@@ -37,12 +50,67 @@ include "../../global/functii.php"
         </div>
         <!-- /.content-header -->
 
-        <!-- Main content -->
-        <section class="content">
+        <!-- Main content --><section class="content">
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
-                kdjfgbisudfg
-            </div>
+                <div class="row">
+                    <!-- aici incepe tabelul  -->
+                    <table class="table table-striped  table-sm" border="2">
+                        <thead class="table-dark">
+                        <td>ID COMANDA</td>
+                        <td>Nume Client</td>
+                        <td>Email Client</td>
+                        <td>Adresa de livrare</td>
+                        <td>Status comanda</td>
+                        <td>Data comenzii</td>
+                        <td>Editeaza</td>
+                        </thead>
+                        <?php
+                        foreach ($comenzi as $comanda) {?>
+                            <tr>
+                                <div class="col-md-3">
+                                    <div class="card">
+                                        <td><?php
+                                            echo $comanda['id'];
+                                            ?></td>
+                                        <td>
+                                            <?php echo $comanda['numeClient'];
+
+                                            ?>
+                                        </td>
+                                        <td><?php echo $comanda['email'];
+                                            ?></td>
+                                        <td><?php echo $comanda['adresa'];
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $comanda['status'];
+
+                                            ?>
+                                        </td>
+
+
+
+                                        <td><?php
+
+                                            echo $comanda['data'];
+                                            ?></td>
+                                        <td>
+                                            <!-- aici faci butonul de editare comanda -->
+                                            <div class="card-body">
+                                                <a href="<?php echo url;?>admin/comenzi/afiseaza.php?id=<?php echo $comanda['id']; ?>" class="btn btn-outline-success btn-sm" >Afiseaza</a>
+                                                <br>
+                                                <a href="<?php echo url;?>admin/comenzi/edit.php?id=<?php echo $comanda['id']; ?>" class="btn btn-warning btn-sm" >Editeaza</a>
+                                            </div>
+                                        </td>
+
+                                    </div>
+                                </div>
+                            </tr>
+                        <?php   }
+                        ?>
+
+                </div>
         </section>
     </div>
 

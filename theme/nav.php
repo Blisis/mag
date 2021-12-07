@@ -99,7 +99,7 @@
                     <span class="float-right text-muted text-sm">2 days</span>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="../admin/comenzi/listeaza_nou.php" class="dropdown-item dropdown-footer">Afisaza toate COMENZIILE!</a>
+                <a href="<?php url?>listeaza_nou.php" class="dropdown-item dropdown-footer">Afisaza toate COMENZIILE!</a>
             </div>
         </li>
     </ul>
