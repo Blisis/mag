@@ -64,6 +64,7 @@ left join useri AS u on c.id_user=u.id
                         <?php
                         foreach ($comenzi as $comanda)
                         {?>
+                    <tr>
                         <div class="col-md-3">
                             <div class="card">
                                 <td><?php
@@ -102,7 +103,7 @@ left join useri AS u on c.id_user=u.id
 
                             </div>
                         </div>
-
+                    </tr>
                      <?php   }
                         ?>
 

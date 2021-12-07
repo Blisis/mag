@@ -68,7 +68,7 @@ where pc.id_comenzi = {$id}
                             <?php
                             foreach ($produse as $produs){
                                 ?>
-                              <tr>
+                                <tr>
                                   <td><?php echo $produs['id']; ?></td>
                                   <td><img src="<?php echo url."imagini/produse/".$produs['poza']; ?>" alt=""></td>
                                   <td><?php echo $produs['nume']; ?></td>
@@ -76,23 +76,14 @@ where pc.id_comenzi = {$id}
                                   <td><?php echo $produs['cantitate']; ?></td>
                                   <td>Aveti <?php echo $produs['stoc']." bucati in stoc!";
                                   echo "<br>";
-
                                   if ($produs['cantitate']>=$produs['stoc']){
                                       echo "<p class='alert alert-danger'>Stocul nu este suficient!</p>";
-
-                                  }
-                                  else{
-
+                                  } else{
                                       echo "<p class='alert alert-success' >Cantitatea din stoc este suficienta</p>";
                                   }
-
                                   ?></td>
-
-
-                               </tr>
-                           <?php }
-                            ?>
-
+                                </tr>
+                           <?php } ?>
                     </table>
                 </div>
             </div>

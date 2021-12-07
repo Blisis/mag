@@ -93,7 +93,7 @@ $comenzi_finalizate=reset($comenzi_finalizate);
                                 Comenzi:
                             </div>
                             <div class="col-md-9">
-                                <?php echo $comenzi['n'] ;?>-Total comenzi <br>
+                                <?php echo $comenzi['n'] ;?> -Total comenzi <br>
                                 <?php echo $comenzi_primite['n'] ;?>- Comenzi noi <br>
                                 <?php echo $comenzi_proces['n'] ;?>-Comenzi in procesare  <br>
                                 <?php echo $comenzi_trimise['n'] ;?>-Comenzi trimise spre client <br>
