@@ -1,3 +1,7 @@
+<?php $categorii=$database->query("
+select * from categorii
+where id_parinte =1
+")->fetch_all(MYSQLI_ASSOC); ?>
 <div class="row backgroundAlb">
     <div class="col-md-6">
         <img src="<?php echo url; ?>imagini/design/original.png" alt="" class="logo">
@@ -19,11 +23,9 @@
                 <?php
                 if ($_SESSION['user']['nume']!==null){
                     echo $_SESSION['user']['nume'];
-                    }
-                else{
+                } else{
                     echo $_SESSION['user']['email'];
                 }
-
                 ?>
                 <br>
                 <a href="<?php echo url; ?>logout.php" class="btn btn-danger btn-xs">Paraseste</a>
@@ -34,23 +36,15 @@
                     ?>
                 <a href="admin/dashbord.php" class="btn btn-danger btn-xs">Panou Control</a>
                    <?php
-
                 }
                 ?>
-
             </div>
-
-
         <?php } else { //aici nu esti logat?>
-
             <div class="autentificareHeader" >
                 <a href="login.php" class="btn btn-danger">Autentifica-te</a>
                 <a href="signin.php" class="btn btn-danger">Inregistrare</a>
             </div>
         <?php } ?>
-
-
-
     </div>
 </div>
 <div class="row">
@@ -68,13 +62,13 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="index.php">Acasa<span class="sr-only">(current)</span></a></li>
 <!--      aici sa fac legaturiile cu linkuriile              -->
-                    <li><a href="#">Magneti Turistici</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
+                    <?php
+
+                    foreach ($categorii as $categorie){?>
+
+                    <li><a href="<?php echo url;?>categorie_selectata.php?id=<?php echo $categorie['id']; ?>"><?php echo $categorie['nume']?></a></li>
+                        <?php
+                    }?>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
             </div>

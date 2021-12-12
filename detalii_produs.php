@@ -21,9 +21,6 @@ ok["lungime"]=> string(5) "12.00"
 ok["latime"]=> string(5) "12.00"
 nu["id_categorie"]=> string(1) "1"
 ["data"]=> string(19) "2021-12-02 19:50:25" }
-
-
-
 */
 ?>
 <html>
