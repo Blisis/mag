@@ -1,7 +1,10 @@
 <?php $categorii=$database->query("
 select * from categorii
-where id_parinte =1
-")->fetch_all(MYSQLI_ASSOC); ?>
+")->fetch_all(MYSQLI_ASSOC);
+
+
+
+?>
 <div class="row backgroundAlb">
     <div class="col-md-6">
         <img src="<?php echo url; ?>imagini/design/original.png" alt="" class="logo">
@@ -47,6 +50,7 @@ where id_parinte =1
         <?php } ?>
     </div>
 </div>
+<!--divul pentru categorii    -->
 <div class="row">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -64,12 +68,43 @@ where id_parinte =1
 <!--      aici sa fac legaturiile cu linkuriile              -->
                     <?php
 
-                    foreach ($categorii as $categorie){?>
-
+                    foreach ($categorii as $categorie){
+                    if ($categorie['id_parinte']==0){?>
                     <li><a href="<?php echo url;?>categorie_selectata.php?id=<?php echo $categorie['id']; ?>"><?php echo $categorie['nume']?></a></li>
                         <?php
-                    }?>
+                    }}?>
                     <li><a href="contact.php">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<!--divul pentru categorii    -->
+<div class="row">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!--  aici sa fac legaturiile cu linkuriile pentru categorii
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                    <?php
+
+                    foreach ($categorii as $categorie){
+                      if ($categorie['id_parinte']==1){
+                        ?>
+
+                        <li><a href="<?php echo url;?>categorie_selectata.php?id=<?php echo $categorie['id']; ?>"><?php echo $categorie['nume']?></a></li>
+                        <?php
+                      }}?>
+                      -->
                 </ul>
             </div>
         </div>
