@@ -11,7 +11,6 @@ from useri as u where u.id=$id_user;
 //echo "<pre>";
 //var_dump($user);
 //die;
-
 $user=reset($user);
 $erori=[];
 if (ispost()) {

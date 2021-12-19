@@ -6,12 +6,11 @@ $vanzari=$database->query("select p.id, p.nume , p.poza from produse as p
     join produse_comenzi as pc on pc.id_produse=p.id
 order by pc.cantitate desc
 limit 4")->fetch_all(MYSQLI_ASSOC);
-/*$noutati=$database->query(" SELECT t.* FROM mag.produse t
-order by data desc
-LIMIT 4")->fetch_all(MYSQLI_ASSOC);
-daca las query-ul asta -> imi buseste pagina de index!!!!!
-*/
-$noutati=[];
+$noutati=
+    $database->query("SELECT t.* FROM mag.produse t order by t.data desc LIMIT 4")
+        ->fetch_all(MYSQLI_ASSOC);
+//daca las query-ul asta -> imi buseste pagina de index!!!!!
+
 ?>
 <div class="row backgroundAlb container col-md-10 align-middle">
     <div>
