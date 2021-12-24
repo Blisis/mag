@@ -73,7 +73,7 @@ select * from categorii
                     <li><a href="<?php echo url;?>categorie_selectata.php?id=<?php echo $categorie['id']; ?>"><?php echo $categorie['nume']?></a></li>
                         <?php
                     }}?>
-                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="<?php echo url;?>contact.php">Contact</a></li>
                 </ul>
             </div>
         </div>

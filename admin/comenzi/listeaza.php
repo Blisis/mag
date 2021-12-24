@@ -36,7 +36,7 @@ left join useri AS u on c.id_user=u.id
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="<?php url?>/admin/dashbord.php">Acasa</a></li>
                             <li class="breadcrumb-item active">Toate comenziile</li>
                         </ol>
                     </div><!-- /.col -->
