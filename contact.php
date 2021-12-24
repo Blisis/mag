@@ -9,6 +9,7 @@ $succes=false;
 
 if (islogin()){
     $email=$_SESSION['user']['email'];
+    $id_user=$_SESSION['user']['id'];
 }
 if(ispost()){
     $erori=[];
@@ -24,7 +25,7 @@ if(ispost()){
         $email=$_POST['email'];
         $subiect=$_POST['subiect'];
         $mesaj=$_POST['mesaj'];
-        $database->query("insert into mag.`mesaje`(`subiect`,`mesaj`,`email`) values('{$subiect}','{$mesaj}','{$email}');");
+        $database->query("insert into mag.`mesaje`(`subiect`,`mesaj`,`email`,`id_user`) values('{$subiect}','{$mesaj}','{$email}','{$id_user}');");
         $succes=true;
     }
 
