@@ -33,7 +33,7 @@ $useri=$database->query("SELECT * FROM useri ")->fetch_all(MYSQLI_ASSOC);
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="<?php url?>/admin/dashbord.php">Acasa</a></li>
+                            <li class="breadcrumb-item"><a href="<?php url?>admin/dashbord.php">Acasa</a></li>
                             <li class="breadcrumb-item active">Afisare Useri</li>
                         </ol>
                     </div><!-- /.col -->
