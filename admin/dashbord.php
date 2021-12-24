@@ -1,10 +1,7 @@
 <?php
-
 require_once "../global/db.php";
 require_once "../global/functii.php";
-
 // functionalitate php, ce face pagina asta efectiv
-
 $database=Database::getInstatnta();
 
 $useri=$database->query("select count(u.id) as n from useri as u")->fetch_all(MYSQLI_ASSOC);
@@ -37,19 +34,11 @@ $mesaje=reset($mesaje);
 
 $mesaje_noi=$database->query("select count(m.id) as n from mesaje as m where status='0'")->fetch_all(MYSQLI_ASSOC);
 $mesaje_noi=reset($mesaje_noi);
-
-
-
-
 ?>
-
 <!-- Aici HTML, afisarea efectiva a elementelor in pagina -->
-
 <html>
 <head>
-    <?php
-    include"../theme/admin_css.php"
-    ?>
+    <?php include"../theme/admin_css.php"  ?>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -84,10 +73,10 @@ $mesaje_noi=reset($mesaje_noi);
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-md-3">
-                                Useri :
+                                <a href="useri/listeaza.php">Useri :
                             </div>
                             <div class="col-md-9">
-                                <?php echo $useri['n'] ;?>-Total useri <br>
+                                <?php echo $useri['n'] ;?>-Total useri </a><br>
                                 <?php echo $useri_noi['n'] ;?>-Useri noi <br>
                                 <?php echo $useri_activi['n'] ;?>-Useri activi <br>
                             </div>
@@ -111,25 +100,19 @@ $mesaje_noi=reset($mesaje_noi);
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-md-3">
-                                Mesaje:
+                                <a href="mesaje.php">Mesaje:
                             </div>
                             <div class="col-md-9">
-                                <?php echo $mesaje['n'] ;?>-Total mesaje <br>
+                                <?php echo $mesaje['n'] ;?>-Total mesaje </a><br>
                                 <?php echo $mesaje_noi['n'] ;?>-Mesaje noi <br>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-
 </div>
-<?php
-include "../theme/admin_js.php"
-?>
-
+<?php  include "../theme/admin_js.php"  ?>
 </body>
 </html>
