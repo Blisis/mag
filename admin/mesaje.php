@@ -3,16 +3,12 @@
 include "../global/functii.php";
 require_once "../global/db.php";
 $database = Database::getInstatnta();
-$mesaje=$database->query("select m.id ,m.subiect,m.email,m.data,m.status,m.id,u.nume,u.email,u.telefon from mesaje as m
+$mesaje=$database->query("select  m.id,m.subiect,m.email,m.data,m.status,m.id,u.nume,u.email,u.telefon from mesaje as m
 join useri as u
 where u.id=m.id_user order by m.data desc;
 ;")->fetch_all(MYSQLI_ASSOC);
-
-
 ?>
-
 <!-- Aici HTML, afisarea efectiva a elementelor in pagina -->
-
 <html>
 <head>
     <?php
@@ -21,11 +17,10 @@ where u.id=m.id_user order by m.data desc;
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
-    <!--        navbar here-->
+    <!--        navbar -->
     <?php include "../theme/nav.php"; ?>
-    <!-- aside here-->
+    <!-- aside -->
     <?php include "../theme/meniu.php"; ?>
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
@@ -39,12 +34,10 @@ where u.id=m.id_user order by m.data desc;
                             <li class="breadcrumb-item"><a href="<?php url?>admin/dashbord.php">Acasa</a></li>
                             <li class="breadcrumb-item active">Toate Mesajele</li>
                         </ol>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- /.content-header -->
-
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
@@ -73,13 +66,10 @@ where u.id=m.id_user order by m.data desc;
                                             <?php
                                             } else if($mesaj['status']==1){?>
                                                 <p style="color:">Mesaj Deschis</p>
-
-
                                             <?php
                                             }else if($mesaj['status']==2){
                                                ?>
                                             <p style="color: darkblue;background: springgreen">  Ai raspuns!</p>
-
                                             <?php
                                             }
                                             ?>
@@ -94,34 +84,27 @@ where u.id=m.id_user order by m.data desc;
                                         </td>
                                         <td><?php echo $mesaj['subiect'];
                                             ?></td>
-
                                         <td>
                                             <?php echo $mesaj['data'];
-
                                             ?>
                                         </td>
-
                                         <td>
                                             <!-- aici faci butonul de editare comanda -->
                                             <div class="card-body">
                                                 <a href="<?php echo url;?>admin/raspunde_mesaj.php?id=<?php echo $mesaj['id']; ?>" class="btn btn-outline-success btn-sm" >Afiseaza</a>
                                             </div>
                                         </td>
-
                                     </div>
                                 </div>
                             </tr>
                         <?php   }
                         ?>
-
                 </div>
         </section>
     </div>
-
 </div>
 <?php
 include "../theme/admin_js.php"
 ?>
-
 </body>
 </html>
