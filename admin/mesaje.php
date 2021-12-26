@@ -53,11 +53,10 @@ where u.id=m.id_user order by m.data desc;
                     <!-- aici incepe tabelul  -->
                     <table class="table table-striped  table-sm" border="2">
                         <thead class="table-dark">
-
+                        <td>Status Mesaj</td>
                         <td>Nume Utilizator</td>
                         <td>Email Utilizator</td>
                         <td>Subiect</td>
-                        <td>Status Mesaj</td>
                         <td>Data Mesajului</td>
                         <td>Vizualizare</td>
                         </thead>
@@ -68,6 +67,24 @@ where u.id=m.id_user order by m.data desc;
                                 <div class="col-md-3">
                                     <div class="card">
                                         <td><?php
+                                            if($mesaj['status']==0){
+                                              ?>
+                                                <p style="color:orangered;background: yellow; font-size: large" ><b>Mesaj nou!</b></p>
+                                            <?php
+                                            } else if($mesaj['status']==1){?>
+                                                <p style="color:">Mesaj Deschis</p>
+
+
+                                            <?php
+                                            }else if($mesaj['status']==2){
+                                               ?>
+                                            <p style="color: darkblue;background: springgreen">  Ai raspuns!</p>
+
+                                            <?php
+                                            }
+                                            ?>
+                                        </td>
+                                        <td><?php
                                             echo $mesaj['nume'];
                                             ?></td>
                                         <td>
@@ -77,9 +94,7 @@ where u.id=m.id_user order by m.data desc;
                                         </td>
                                         <td><?php echo $mesaj['subiect'];
                                             ?></td>
-                                        <td><?php echo $mesaj['status'];
-                                            ?>
-                                        </td>
+
                                         <td>
                                             <?php echo $mesaj['data'];
 
