@@ -23,7 +23,7 @@ $produse=$database->query("select p.* , c.nume as nume_cat from produse AS p lef
 <!-- Aici este hederul cu top-uriile -->
 <div class="container">
     <?php include "theme/top_vanzari.php";?>
-</div><br><br>
+</div><br>
 <!-- aici afisam ce produse avem in baza de date-->
 <div class="container">
     <div class="row">
