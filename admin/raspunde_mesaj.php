@@ -3,6 +3,7 @@ require_once "../global/db.php";
 require_once "../global/functii.php";
 $database=Database::getInstatnta();
 $id=$_GET['id'];
+
 $mesaj=$database->query("
 select * from mesaje where id={$id}; 
 ")->fetch_all(MYSQLI_ASSOC);
