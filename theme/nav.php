@@ -1,6 +1,8 @@
 <?php
 $mesaje_noi=$database->query("select count(m.id) as n from mesaje as m where status='0'")->fetch_all(MYSQLI_ASSOC);
 $mesaje_noi=reset($mesaje_noi);
+$comenzi_primite=$database->query("select count(c.id) as n from comenzi as c where status='primita'")->fetch_all(MYSQLI_ASSOC);
+$comenzi_primite=reset($comenzi_primite);
 
 ?>
 
@@ -86,10 +88,10 @@ $mesaje_noi=reset($mesaje_noi);
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <i class="far fa-bell"></i>
-                <span class="badge badge-warning navbar-badge">Comenzi</span>
+                <span class="badge badge-warning navbar-badge"><?php echo $comenzi_primite['n'] ;?></span>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <span class="dropdown-item dropdown-header"><?php echo $mesaje_noi['n'] ;?> Mesaje noi</span>
+                <span class="dropdown-item dropdown-header"><?php echo $comenzi_primite['n'] ;?> Comenzi noi</span>
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item">
                     <i class="fas fa-envelope mr-2"></i> 4 new messages
