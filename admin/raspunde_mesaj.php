@@ -87,11 +87,11 @@ die();
                         <p style="font-size:x-large"> <?php echo $mesaj['mesaj']; ?></p>
                         <p style="font-size:x-large">
                             <?php
-                            if ($mesaj['status']=0){
+                            if ($mesaj['status']==0){
                                 echo "MESAJ NOU";
-                            }else if ($mesaj['status']=1){
+                            }else if ($mesaj['status']==1){
                                 echo "MESAJ CITIT";
-                            }else if ($mesaj['status']=2){
+                            }else if ($mesaj['status']==2){
                                 echo "MESAJ FINALIZAT";
                             }
                              ?>
