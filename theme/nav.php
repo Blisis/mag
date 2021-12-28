@@ -1,9 +1,19 @@
 <?php
-$mesaje_noi=$database->query("select count(m.id) as n from mesaje as m where status='0'")->fetch_all(MYSQLI_ASSOC);
-$mesaje_noi=reset($mesaje_noi);
-$comenzi_primite=$database->query("select count(c.id) as n from comenzi as c where status='primita'")->fetch_all(MYSQLI_ASSOC);
+$nrMesaje_noi=$database->query("select count(m.id) as n from mesaje as m where status='0'")->fetch_all(MYSQLI_ASSOC);
+$nrMesaje_noi=reset($nrMesaje_noi);
+$nrComenzi_primite=$database->query("select count(c.id) as n from comenzi as c where status='primita'")->fetch_all(MYSQLI_ASSOC);
+$nrComenzi_primite=reset($nrComenzi_primite);
+$comenzi_primite=$database->query("select c.id as n from comenzi as c where status='primita'")->fetch_all(MYSQLI_ASSOC);
 $comenzi_primite=reset($comenzi_primite);
 
+
+
+$mesage=$database->query("select  m.id,m.subiect,m.data,m.status,u.nume,u.email from mesaje as m
+join useri as u
+where u.id=m.id_user && m.status=0 order by m.data desc
+;")->fetch_all(MYSQLI_ASSOC);
+//var_dump($mesaje);
+//die();
 ?>
 
 
@@ -30,13 +40,46 @@ $comenzi_primite=reset($comenzi_primite);
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <i class="far fa-comments"></i>
-                <span class="badge badge-danger navbar-badge"><?php echo $mesaje_noi['n'] ;?></span>
+                <span class="badge badge-danger navbar-badge"><?php echo $nrMesaje_noi['n'] ;?></span>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <a href="#" class="dropdown-item">
+            <?php
+            foreach( $mesage as $mesaj){
+            ?>
+                <a href="<?php url?>/admin/raspunde_mesaj.php" class="dropdown-item">
                     <!-- Message Start -->
                     <div class="media">
-                        <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                        <div class="media-body">
+                            <h3 class="dropdown-item-title"><?php
+                                if ($mesaj['nume']!=null) {
+                                    echo $mesaj['nume'];
+                                } echo $mesaj['email'];
+                                ?></h3>
+
+                            <p class="text-sm"><?php echo $mesaj['subiect']; ?></p>
+                            <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> <?php echo $mesaj['data']; ?></p>
+                        </div>
+                    </div>
+                    <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <?php };
+            ?>
+
+
+
+
+                <!--
+                 Messages Dropdown Menu
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-comments"></i>
+                <span class="badge badge-danger navbar-badge">10</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+-----------------------------------------------------------------Message Start
+                <a href="#" class="dropdown-item">
+                    <div class="media">
                         <div class="media-body">
                             <h3 class="dropdown-item-title">
                                 Brad Diesel
@@ -46,13 +89,13 @@ $comenzi_primite=reset($comenzi_primite);
                             <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
                         </div>
                     </div>
-                    <!-- Message End -->
                 </a>
+---------------------------------------------------------------------------Message End
+
                 <div class="dropdown-divider"></div>
+-----------------------------------------------------------------------------Message Start
                 <a href="#" class="dropdown-item">
-                    <!-- Message Start -->
                     <div class="media">
-                        <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                         <div class="media-body">
                             <h3 class="dropdown-item-title">
                                 John Pierce
@@ -62,13 +105,11 @@ $comenzi_primite=reset($comenzi_primite);
                             <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
                         </div>
                     </div>
-                    <!-- Message End -->
+---------------------------------------------------------------------------Message End
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item">
-                    <!-- Message Start -->
                     <div class="media">
-                        <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                         <div class="media-body">
                             <h3 class="dropdown-item-title">
                                 Nora Silvester
@@ -78,10 +119,18 @@ $comenzi_primite=reset($comenzi_primite);
                             <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
                         </div>
                     </div>
-                    <!-- Message End -->
                 </a>
+------------------------------------------------------------Message End
                 <div class="dropdown-divider"></div>
                 <a href="../admin/mesaje.php" class="dropdown-item dropdown-footer">Afiseaza totate mesajele!</a>
+            </div>
+        </li>
+
+
+                -->
+
+                <div class="dropdown-divider"></div>
+                <a href="<?php url?>admin/mesaje.php" class="dropdown-item dropdown-footer">Afiseaza totate mesajele!</a>
             </div>
         </li>
         <!-- Notifications Dropdown Menu -->
@@ -108,7 +157,7 @@ $comenzi_primite=reset($comenzi_primite);
                     <span class="float-right text-muted text-sm">2 days</span>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="<?php url?>listeaza_nou.php" class="dropdown-item dropdown-footer">Afisaza toate COMENZIILE!</a>
+                <a href="<?php url?>admin/comenzi/listeaza_nou.php class="dropdown-item dropdown-footer">Afisaza toate COMENZIILE!</a>
             </div>
         </li>
     </ul>

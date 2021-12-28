@@ -53,12 +53,12 @@ $mesaje_noi=reset($mesaje_noi);
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Statistici</h1>
+                        <h1 class="m-0" style="font: x-large">Statistica:</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="dashbord.php">Acasa</a></li>
-                            <li class="breadcrumb-item active">Tablou control </li>
+                            <li class="breadcrumb-item"><a href="dashbord.php">ACASA</a></li>
+                            <li class="breadcrumb-item active">Statistici </li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -103,7 +103,8 @@ $mesaje_noi=reset($mesaje_noi);
                                 <a href="mesaje.php">Mesaje:
                             </div>
                             <div class="col-md-9">
-                                <?php echo $mesaje['n'] ;?>-Total mesaje </a><br>
+                                <?php
+                                echo $mesaje['n'] ;?>-Total mesaje </a><br>
                                 <?php echo $mesaje_noi['n'] ;?>-Mesaje noi <br>
                             </div>
                         </div>
