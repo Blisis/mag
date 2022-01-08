@@ -3,7 +3,7 @@
 include "../global/functii.php";
 require_once "../global/db.php";
 $database = Database::getInstatnta();
-$mesaje=$database->query("select  m.id,m.subiect,m.email,m.data,m.status,m.id,u.nume,u.email,u.telefon from mesaje as m
+$mesaje=$database->query("select  m.id,m.subiect,m.email,m.data,m.status,m.id,u.nume,u.email,u.telefon from subiecte_mesaje as m
 join useri as u
 where u.id=m.id_user order by m.data desc;
 ;")->fetch_all(MYSQLI_ASSOC);

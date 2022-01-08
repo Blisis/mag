@@ -29,10 +29,10 @@ $comenzi_trimise=reset($comenzi_trimise);
 $comenzi_finalizate=$database->query("select count(c.id) as n from comenzi as c where status='finalizata'")->fetch_all(MYSQLI_ASSOC);
 $comenzi_finalizate=reset($comenzi_finalizate);
 
-$mesaje=$database->query("select count(m.id) as n from mesaje as m")->fetch_all(MYSQLI_ASSOC);
+$mesaje=$database->query("select count(m.id) as n from subiecte_mesaje as m")->fetch_all(MYSQLI_ASSOC);
 $mesaje=reset($mesaje);
 
-$mesaje_noi=$database->query("select count(m.id) as n from mesaje as m where status='0'")->fetch_all(MYSQLI_ASSOC);
+$mesaje_noi=$database->query("select count(m.id) as n from subiecte_mesaje as m where status='0'")->fetch_all(MYSQLI_ASSOC);
 $mesaje_noi=reset($mesaje_noi);
 ?>
 <!-- Aici HTML, afisarea efectiva a elementelor in pagina -->

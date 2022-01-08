@@ -1,9 +1,6 @@
 <?php $categorii=$database->query("
 select * from categorii
 ")->fetch_all(MYSQLI_ASSOC);
-
-
-
 ?>
 <div class="row backgroundAlb">
     <div class="col-md-6">
@@ -33,7 +30,8 @@ select * from categorii
                 <br>
                 <a href="<?php echo url; ?>logout.php" class="btn btn-danger btn-xs">Paraseste</a>
                 <a href="<?php echo url; ?>user.php" class="btn btn-danger btn-xs">Contul meu</a>
-                <a href="<?php echo url; ?>cos.php" class="btn btn-danger btn-xs">Cosul meu</a>
+                <a href="<?php echo url; ?>cos.php" class="btn btn-danger btn-sm">Cosul meu</a>
+                <a href="<?php echo url; ?>mesaje.php" class="btn btn-danger btn-xs">Mesaje</a>
                 <?php
                 if ($_SESSION['user']['is_admin']==1){
                     ?>
@@ -79,7 +77,7 @@ select * from categorii
         </div>
     </nav>
 </div>
-<!--divul pentru categorii    -->
+<!--divul pentru categorii
 <div class="row">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -91,7 +89,7 @@ select * from categorii
                     <span class="icon-bar"></span>
                 </button>
             </div>
-            <!--  aici sa fac legaturiile cu linkuriile pentru categorii
+             aici sa fac legaturiile cu linkuriile pentru categorii
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 

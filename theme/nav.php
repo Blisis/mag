@@ -1,5 +1,5 @@
 <?php
-$nrMesaje_noi=$database->query("select count(m.id) as n from mesaje as m where status='0'")->fetch_all(MYSQLI_ASSOC);
+$nrMesaje_noi=$database->query("select count(m.id) as n from subiecte_mesaje as m where status='0'")->fetch_all(MYSQLI_ASSOC);
 $nrMesaje_noi=reset($nrMesaje_noi);
 $nrComenzi_primite=$database->query("select count(c.id) as n from comenzi as c where status='primita'")->fetch_all(MYSQLI_ASSOC);
 $nrComenzi_primite=reset($nrComenzi_primite);
@@ -8,7 +8,7 @@ $comenzi_primite=reset($comenzi_primite);
 
 
 
-$mesage=$database->query("select  m.id,m.subiect,m.data,m.status,u.nume,u.email from mesaje as m
+$mesage=$database->query("select  m.id,m.subiect,m.data,m.status,u.nume,u.email from subiecte_mesaje as m
 join useri as u
 where u.id=m.id_user && m.status=0 order by m.data desc
 ;")->fetch_all(MYSQLI_ASSOC);
