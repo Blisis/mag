@@ -3,6 +3,14 @@ require_once "global/db.php";
 require_once "global/functii.php";
 $database=Database::getInstatnta();
 $user=$_SESSION["user"];
+$subiecte=$database->query("select  * from subiecte_mesaje where id_user={$user['id']}")->fetch_all(MYSQLI_ASSOC);
+//echo "<pre>";
+//var_dump($subiecte);
+//die();
+
+
+
+
 
 ?>
 <html>
@@ -20,4 +28,48 @@ $user=$_SESSION["user"];
 <div class="container">
     <?php include "theme/header.php"; ?>
 </div>
+<section class="content">
+    <div class=" col-md-12">
+    <div class="container-fluid" >
+        <!-- Small boxes (Stat box) -->
+        <table class="table table-striped  table-sm">
+            <thed>
+                <td>Data</td>
+                <td>Subeiect</td>
+                <td>Status</td>
+                <td style ="float: right">Vizualizeaza</td>
+            </thed>
 
+            <?php foreach ($subiecte as $subiect){?>
+            <tbody>
+                <td><?php echo $subiect['data']; ?></td>
+                <td><?php echo $subiect['subiect']; ?></td>
+                <td><?php
+                if ($subiect['status']==0){
+                    ?>
+                    <div class="Mesaj trimis" style="color: green">Mesaj trimis</div>
+                    <?php
+                }else if($subiect['status']==1){
+                    ?>
+                    <div class="Mesaj trimis" style="color: Blue">Iti cautam un raspuns</div>
+                    <?php
+                } else{
+                    ?>
+                    <div class="Mesaj trimis" style="color: red">Am gasit solutia</div>
+                    <?php
+                }
+
+
+
+                ?></td>
+                <td><a href="<?php url;?>conversatie.php?id=<?php echo $subiect['id']; ?>" class="btn btn-info" role="button" style ="float: right">Vizualizeaza mesaje</a></td>
+                <br>
+            </tbody>
+<?php }?>
+
+        </table>
+    </div>
+    </div>
+</section>
+</body>
+</html>
