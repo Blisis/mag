@@ -12,7 +12,7 @@ $noutati=
 //daca las query-ul asta -> imi buseste pagina de index!!!!!
 
 ?>
-<div class="row backgroundAlb container col-md-10 align-middle">
+<div class="row backgroundAlb container col-md-13 align-middle">
     <div>
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
