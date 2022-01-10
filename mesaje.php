@@ -56,14 +56,10 @@ $subiecte=$database->query("select  * from subiecte_mesaje where id_user={$user[
                 } else{
                     ?>
                     <div class="Mesaj trimis" style="color: red">Am gasit solutia</div>
-                    <?php
-                }
-
-
-
-                ?></td>
+                    <?php } ?>
+                </td>
                 <td><a href="<?php url;?>conversatie.php?id=<?php echo $subiect['id']; ?>" class="btn btn-info" role="button" style ="float: right">Vizualizeaza mesaje</a></td>
-                <br>
+
             </tbody>
 <?php }?>
 

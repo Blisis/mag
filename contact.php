@@ -25,8 +25,7 @@ if(ispost()){
         $email=$_POST['email'];
         $subiect=$_POST['subiect'];
         $mesaj=$_POST['mesaj'];
-        $database->query("insert into mag.`subiecte_mesaje`(`subiect`,`id_mesaj`,`email`,`id_user`) values('{$subiect}','{$mesaj}','{$email}','{$id_user}'),
-                                                                                 insert into mag.`mesaje`(`mesaj`,`id_user`,``);");
+        $database->query("insert into mag.`subiecte_mesaje`(`subiect`,`id_mesaj`,`email`,`id_user`) values('{$subiect}','{$mesaj}','{$email}','{$id_user}');");
         $database->query("insert into mag.`mesaje`(`mesaj`,``,``,``) values('{$subiect}','{$mesaj}','{$email}','{$id_user}');");
 
         $succes=true;
