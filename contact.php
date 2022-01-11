@@ -25,8 +25,9 @@ if(ispost()){
         $email=$_POST['email'];
         $subiect=$_POST['subiect'];
         $mesaj=$_POST['mesaj'];
-        $database->query("insert into mag.`subiecte_mesaje`(`subiect`,`id_mesaj`,`email`,`id_user`) values('{$subiect}','{$mesaj}','{$email}','{$id_user}');");
-        $database->query("insert into mag.`mesaje`(`mesaj`,``,``,``) values('{$subiect}','{$mesaj}','{$email}','{$id_user}');");
+        $database->query("insert into mag.`subiecte_mesaje`(`subiect`,`email`,`id_user`) values('{$subiect}','{$email}','{$id_user}');");
+        $lastID=$database->insert_id;
+        $database->query("insert into mag.`mesaje`(`mesaj`,`id_user`,`id_subiect`) values('{$mesaj}','{$id_user}','{$lastID}');");
 
         $succes=true;
     }
@@ -39,7 +40,7 @@ if(ispost()){
 ?>
 <html>
 <head>
-    <title>Acasa</title>
+    <title>Contacteaza-ne</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha512-Dop/vW3iOtayerlYAqCgkVr2aTr2ErwwTYOvRFUpzl2VhCMJyjQF0Q9TjUXIo6JhuM/3i0vVEt2e/7QQmnHQqw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
