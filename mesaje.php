@@ -28,6 +28,12 @@ $subiecte=$database->query("select  * from subiecte_mesaje where id_user={$user[
 <div class="container">
     <?php include "theme/header.php"; ?>
 </div>
+<div class="col-md-12">
+    <a href="<?php url;?>contact.php" class="btn btn-warning" role="button" style ="float: left">Subiect nou</a>
+
+</div>
+<div class="container">
+
 <section class="content">
     <div class=" col-md-12">
     <div class="container-fluid" >
@@ -67,5 +73,6 @@ $subiecte=$database->query("select  * from subiecte_mesaje where id_user={$user[
     </div>
     </div>
 </section>
+</div>
 </body>
 </html>
