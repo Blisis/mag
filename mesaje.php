@@ -8,10 +8,6 @@ $subiecte=$database->query("select  * from subiecte_mesaje where id_user={$user[
 //var_dump($subiecte);
 //die();
 
-
-
-
-
 ?>
 <html>
 <head>
