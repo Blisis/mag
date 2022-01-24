@@ -31,6 +31,7 @@ $user=$_SESSION["user"];
             <div class="col-md-6">
                 <div class="thumbnail">
                 Mesaje Trimise
+                    <!-- todo :   aici sa afisezi mesajele de la acest subiect -->
                 </div>
             </div>
         </div>
