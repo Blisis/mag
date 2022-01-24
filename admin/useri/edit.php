@@ -1,5 +1,7 @@
 <?php
-include "../../global/functii.php"
+require_once "../../global/db.php";
+include "../../global/functii.php";
+$database=Database::getInstatnta();
 // functionalitate php, ce face pagina asta efectiv
 ?>
 
