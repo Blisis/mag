@@ -5,7 +5,7 @@ $database=Database::getInstatnta();
 $id=$_GET['id'];
 
 $mesaj=$database->query("
-select m.id, m.subiect, m.mesaj, m.email, m.data, m.status, m.id_user , u.telefon,u.email,u.nume, u.vechime  from mesaje as m
+select m.id, m.subiect, m.mesaj, m.data, m.status, m.id_user , u.telefon,u.email,u.nume, u.vechime  from mesaje as m
 join  useri as u where m.id='{$id}' && m.id_user=u.id
 order by m.data asc 
 ")->fetch_all(MYSQLI_ASSOC);
