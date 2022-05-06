@@ -17,9 +17,10 @@ $database = Database::getInstatnta();
         if(md5($parola)===$user["parola"]){
             $_SESSION['user'] =$user;
 
-
             $user = $database->query("UPDATE useri u set u.last_login=now() WHERE u.email = '{$email}' ;");
             header('Location:index.php');
+        }else{
+            $erori['invalid_pass']="Parola Invalida";
         }
     }
 

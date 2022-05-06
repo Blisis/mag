@@ -53,7 +53,6 @@ if (ispost()) {
     // asta ajunge sa fie numele pozei mele la final, de exemplu 123_pozamea.jpg
     $numePoza = time().'_'.$_FILES["poza"]["name"];
     $target_file= $targetDir . $numePoza;
-
     // verifica dimensiunea fisierului
     $check = getimagesize($_FILES["poza"]["tmp_name"]);
 
@@ -64,13 +63,11 @@ if (ispost()) {
         // stiu ca nu am poza, de aia $uploadOk e 0
         $uploadOk = 0;
     }
-
     if ($uploadOk == 0) {
         $errori['poza_invalid'] =  "Uploadea-za o poza!.";
     } else {
         if (!move_uploaded_file($_FILES["poza"]["tmp_name"], $target_file)) {
             $errori['poza_invalid'] =  "Fisierul nu a putut fi uploadat!.";
-
         }
     }
     if(count($erori)==0) {
@@ -84,10 +81,8 @@ if (ispost()) {
         $id_categorie=$_POST['id_categorie'];
         $database->query("insert into `produse`(`nume`,`descriere`, `pret`,`stoc`,`greutate`,`lungime`,`latime`,`poza`,`id_categorie`) 
                    values ('{$nume}','{$descriere}','{$pret}','{$stoc}','{$greutate}','{$lungime}','{$latime}','{$numePoza}','{$id_categorie}')");
-
-
-
         $succes=1;
+
     }
 }
 
