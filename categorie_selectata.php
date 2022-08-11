@@ -6,6 +6,9 @@ $id=$_GET['id'];
 $categorie=$database->query("
 select * from categorii where id={$id}; 
 ")->fetch_all(MYSQLI_ASSOC);
+$produse=$database->query("
+select * from produse where id_categorie={$id}; 
+")->fetch_all(MYSQLI_ASSOC);
 
 // trebuie sa aduc produsele din categorie
 ?>
@@ -24,6 +27,35 @@ select * from categorii where id={$id};
 <div class="container">
     <?php include "theme/header.php"; ?>
 </div>
+<div class="container">
+    <div class="row">
+        <?php
+        foreach ($produse as $produs) {
+            ?>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="<?php echo url."imagini/produse/".$produs['poza']; ?>" alt="..." style="max-width: 170px;max-height: 170px">
+                    <div class="caption">
+                        <h3><?php echo $produs['nume']; ?></h3>
+                        <p><?php echo $produs['descriere']; ?></p>
+                        <p><a href="#"  class="btn btn-primary adaugareCos" data-id="<?php echo $produs['id'];?>" role="button" >Adauga in cos</a>
+                            <a href="<?php url;?>detalii_produs.php?id=<?php echo $produs['id']; ?>" class="btn btn-info" role="button" style ="float: right">Detalii</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+    <script>
+        $('.adaugareCos').on('click',function (e) {
+            e.preventDefault();
+            let idprodus=$(this).data('id');
+            $.ajax({
+                url:'adauga_in_cos.php?id_produs='+idprodus
+            });
+            return false;
+        })
+    </script>
 
 
 
